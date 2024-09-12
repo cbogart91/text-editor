@@ -31,7 +31,7 @@ export const getDb = async () => {
   console.log('Get all from the DB');
 
   const contactDb = await openDB('jate', 1);
-  const tx = contactDb.transaction('jate', 'readyonly');
+  const tx = contactDb.transaction('jate', 'readwrite');
 
   const store = tx.objectStore('jate');
   const request = store.getAll();
